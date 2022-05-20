@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ todo.title }}
+
+<form action="{% url 'todo:view_todo' todo.pk %}" method="POST">
+    {{ form.as_p }}
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-outline-success">Save</button>
+
+</form>
+
+<form action="{% url 'todo:task_accomplished' todo.pk %}" method="POST">
+    <button type="submit" class="btn btn-outline-primary">Complete</button>
+</form>
+
+<form action="{% url 'todo:delete_todo' todo.pk %}" method="POST">
+    <button type="submit" class="btn btn-outline-danger">Delete</button>
+</form>
+
+</div>
+
+
+{% endblock %}

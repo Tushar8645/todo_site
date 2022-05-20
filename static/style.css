@@ -1,0 +1,10 @@
+#head {
+    font-family: 'Redressed', cursive;
+    font-size: larger;
+}
+
+span {
+    text-align: center;
+    width: 250px;
+    height: 200px;
+}

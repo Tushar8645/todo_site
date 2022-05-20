@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <h2>Log In</h2>
+    </div>
+</div>
+
+<br>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="inputEmail">Username</label>
+                <input type="text" name="username" class="form-control" id="inputEmail" placeholder="Username">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+
+        <hr>
+
+        <div class="text-center">
+            Need an account? <a href="{% url 'authentication:register_user' %}">SignUp</a> here
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
